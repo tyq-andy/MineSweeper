@@ -36,13 +36,11 @@ public class Board {
 
     private void placeMines() {
         int placedMines = 0;
-        List<String> minefield = new ArrayList<>();
         while (placedMines < mines) {
             int row = random.nextInt(rows);
             int col = random.nextInt(columns);
             if (!cells[row][col].isMine()) {
                 cells[row][col].setMine(true);
-                minefield.add(placedMines, "[" + row + ", " + col + "]");
                 placedMines++;
             }
         }
